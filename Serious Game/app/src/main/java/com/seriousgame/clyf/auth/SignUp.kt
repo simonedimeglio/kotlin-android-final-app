@@ -17,7 +17,7 @@ class SignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater) //binding - S.
         setContentView(binding.root)    //get XML ActivitySignUp root with binding - F.
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -28,23 +28,30 @@ class SignUp : AppCompatActivity() {
             val pass = binding.passET.text.toString()   //pass field - F.
             val confirmpass = binding.confirmPassEt.text.toString() //confirm_pass field - F.
 
+            //start if - S.
             if (email.isNotEmpty() && pass.isNotEmpty() && confirmpass.isNotEmpty()){   //check form field - F.
+                //1st inner if - S.
                 if (pass == confirmpass){
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {    //add new user in Firebase with email and pass - F.
-                        //password must have almost six char!!
-                        if (it.isSuccessful){
-                            val intent = Intent(this, SignIn::class.java)
+                        //FirebaseAuth: password must have almost six char - S.
+
+                        //2nd inner if - S.
+                        if (it.isSuccessful){ //succesful case - S.
+                            val intent = Intent(this, SignIn::class.java) //define intent - S.
                             startActivity(intent)   //takes you to SignIn activity - F.
                         }else{
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
                         }
+                        //end 2nd inner if - S.
                     }
                 }else{
                     Toast.makeText(this, "Le password non sono coincidenti", Toast.LENGTH_LONG).show()  //error message - F.
                 }
+                //end 1st inner if - S.
             }else{
                 Toast.makeText(this, "Errore: completa tutti i campi", Toast.LENGTH_LONG).show()    //error message - F.
             }
+            //end if - S.
         }
 
         binding.signupSignin.setOnClickListener {   //if you have already registered it takes us to SignIn activity - F.

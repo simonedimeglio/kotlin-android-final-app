@@ -17,7 +17,8 @@ class SignIn : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater)
+
+        binding = ActivitySignInBinding.inflate(layoutInflater) //binding - S.
         setContentView(binding.root)    //get XML ActivitySignIn root with binding - F.
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -27,19 +28,23 @@ class SignIn : AppCompatActivity() {
             val email = binding.emailET.text.toString() //email field - F.
             val pass = binding.passET.text.toString()   //pass field - F.
 
+            //start if - S.
             if (email.isNotEmpty() && pass.isNotEmpty()){   //check form field - F.
                     firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {    //check user data in Firebase - F.
-                        if (it.isSuccessful) {
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
+
+                        //1st inner if - S.
+                        if (it.isSuccessful) { //succesful case - S.
+                            val intent = Intent(this, MainActivity::class.java) //define intent - S.
+                            startActivity(intent) //takes you to SignIn activity - S.
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
                         }
+                        //end 1st inner if - S.
                     }
             } else{
                 Toast.makeText(this, "Errore: completa tutti i campi", Toast.LENGTH_LONG).show()    //error message - F.
             }
-
+            //end if - S.
         }
 
         binding.signinSignup.setOnClickListener {   //if you are not already registered it takes us to SignUp activity - F.
