@@ -6,7 +6,7 @@ End of course app development (Android app developer Vianova / Experis)
 
 ## Code Rules
 
-- Data la scelta della metodologia rad, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato
+- Data la scelta della metodologia rad, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (meglio ancora da più dev assieme).
 - Il commento o ogni blocco di commenti deve essere sempre firmato dalle iniziali del dev come nell'esempio seguente (s per Simone, f per Filippo, j per Jasmine, g per Giulia)
  > // TESTO DEL COMMENTO (s.)
 
@@ -17,6 +17,13 @@ End of course app development (Android app developer Vianova / Experis)
 - Commentare ogni variabile e costante sulla stessa riga, descrivendola.
 - Le variabili booleane per i controlli avranno la seguente nomenclatura: checkNomeDelControllo
 - Documentare al meglio il codice al termine di ogni giornata lavorativa 
+
+
+## Other Team Rules
 - Sono previste riunioni frequenti per verificare lo stato di avanzamento del codice
+- Qualità e funzionalità sono in primo piano: meglio meno, ma fatto bene. 
+- Chiedere aiuto non è un reato
+- Il codice è del team, il risultato è del team, i problemi sono del team.
+- Scrivi codice che tutti possano leggere, anche dev esterni al gruppo. Se non si capisce, modifica.
 
 
