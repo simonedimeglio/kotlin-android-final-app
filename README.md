@@ -1,7 +1,6 @@
 # kotlin-android-final-app
-End of course app development (Android app developer Vianova / Experis)
 
-![APP](https://user-images.githubusercontent.com/78272736/205896818-6c01ef90-38ef-4ced-bc12-995af52cb4e8.png)
+![Clyf](https://user-images.githubusercontent.com/78272736/205974869-f839b564-c72d-4022-bda6-aa3b2e8b91ef.png)
 
 
 ## Code Rules
