@@ -1,17 +1,17 @@
-# Clyf - Serious Game - a quiz like no other! 
+# Clyf - Serious Game
 
 ![Clyf](https://user-images.githubusercontent.com/78272736/205974869-f839b564-c72d-4022-bda6-aa3b2e8b91ef.png)
 
 
 ## Roadmap 
-Martedì 6 Dicembre
+**Martedì 6 Dicembre**
 1. Realizzato schema ER
 2. Ipotizzata prima versione UI
 3. Ipotizzata prima versione struttura progetto
-4. Scelto Firebase per auth e db 
+4. Selezione nel nostro stack di Firebase per auth e db 
 5. Creato nuovo progetto in Android Studio
 6. Implementazione Firebase su progetto Android Studio
-7. Implementata prima versione di Login e Registrazione con annessa UI (User Interface non definitiva, propedeutica al testing)
+7. Implementata prima versione di Login e Registrazione con annessa UI (*User Interface non definitiva, propedeutica al testing*)
 8. Testing di Login e Registrazione
 9. Code Refactoring di gruppo
 10. Inserimento di commenti nel codice
@@ -20,9 +20,9 @@ Martedì 6 Dicembre
 
 ## Code Rules
 
-- Data la scelta della metodologia rad, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (meglio ancora da più dev assieme).
-- Il commento o ogni blocco di commenti deve essere sempre firmato dalle iniziali del dev come nell'esempio seguente (s per Simone, f per Filippo, j per Jasmine, g per Giulia)
- > // TESTO DEL COMMENTO (s.)
+- Data la scelta della metodologia RAD, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (*meglio da più dev assieme*).
+- Il commento o ogni blocco di commenti deve essere sempre firmato dalle iniziali del dev come nell'esempio seguente (*s per Simone, f per Filippo, j per Jasmine, g per Giulia*)
+ > // Testo del commento - S
 
 - Ogni commit dovrà presentare il nome del dev e descrivere ciò che è stato fatto
 
