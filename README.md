@@ -1,6 +1,21 @@
-# kotlin-android-final-app
+# Clyf - Serious Game - a quiz like no other! 
 
 ![Clyf](https://user-images.githubusercontent.com/78272736/205974869-f839b564-c72d-4022-bda6-aa3b2e8b91ef.png)
+
+
+## Roadmap 
+Martedì 6 Dicembre
+1. Realizzato schema ER
+2. Ipotizzata prima versione UI
+3. Ipotizzata prima versione struttura progetto
+4. Scelto Firebase per auth e db 
+5. Creato nuovo progetto in Android Studio
+6. Implementazione Firebase su progetto Android Studio
+7. Implementata prima versione di Login e Registrazione con annessa UI (User Interface non definitiva, propedeutica al testing)
+8. Testing di Login e Registrazione
+9. Code Refactoring di gruppo
+10. Inserimento di commenti nel codice
+11. Commit e push
 
 
 ## Code Rules
