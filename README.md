@@ -17,6 +17,10 @@
 10. Inserimento di commenti nel codice
 11. Commit e push
 
+**Mercoledì 7 Dicembre**
+1. Ipotizzato Firestore Firebase come db
+2. Collegato progetto Android Studio a Firebase Firestore
+
 
 ## Code Rules
 
