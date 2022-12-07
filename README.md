@@ -6,7 +6,7 @@
 ## Roadmap 
 **Martedì 6 Dicembre**
 1. Realizzato schema ER
-2. Ipotizzata prima versione UI
+2. Ipotizzata prima versione UI (prima schermata app, palette colori, stile)
 3. Ipotizzata prima versione struttura progetto
 4. Selezione nel nostro stack di Firebase per auth e db 
 5. Creato nuovo progetto in Android Studio
@@ -20,6 +20,8 @@
 **Mercoledì 7 Dicembre**
 1. Ipotizzato Firestore Firebase come db
 2. Collegato progetto Android Studio a Firebase Firestore
+3. Realizzata UI per fase di Accesso e Registrazione
+4. Testing di salvataggio dati su Firestore (Test riuscito)
 
 
 ## Code Rules
