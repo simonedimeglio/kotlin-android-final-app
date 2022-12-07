@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/prova">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -41,7 +42,7 @@
             android:id="@+id/passET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Inserisci la tua email"
+            android:hint="Inserisci la tua password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
