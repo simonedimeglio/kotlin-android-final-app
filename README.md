@@ -1,6 +1,6 @@
 # Clyf - Serious Game
 
-![Clyf](https://user-images.githubusercontent.com/78272736/205974869-f839b564-c72d-4022-bda6-aa3b2e8b91ef.png)
+![clyf](https://user-images.githubusercontent.com/78272736/206232503-3be3ab33-d260-41a0-a4c3-bd21e64bc04d.png)
 
 
 ## Roadmap 
@@ -22,7 +22,8 @@
 2. Collegato progetto Android Studio a Firebase Firestore
 3. Realizzata UI per fase di Accesso e Registrazione
 4. Testing di salvataggio dati su Firestore (Test riuscito)
-
+5. Collegamento Firestore a salvataggio utente in fase di registrazione
+6. Inizio build di interfaccia app per accesso "admin" (predisposizione popup e tasti CRUD)
 
 ## Code Rules
 
