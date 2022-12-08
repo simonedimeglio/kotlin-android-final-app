@@ -40,7 +40,7 @@ class SignIn : AppCompatActivity() {
                         if (it.isSuccessful) { //successful case - S.
                             appoggioID = email
                             val intent = Intent(this, AdminActivity::class.java) //define intent - S.
-                            startActivity(intent) //takes you to SignIn activity - S.
+                            startActivity(intent) //takes you to Admin activity - S.
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
                         }
