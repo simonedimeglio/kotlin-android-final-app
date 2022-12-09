@@ -31,7 +31,6 @@ class AdminActivity : AppCompatActivity() {
             var questionButton = view.question_menu
             var save1 = view.save1
             var quiz : MutableMap<String, Any>
-            var Blocco_Domanda : MutableMap<String, Any> = hashMapOf()
             var quizName : MutableMap<String, Any> = hashMapOf()
 
             var contenitore : ArrayList<MutableMap<String, Any>> = ArrayList()
@@ -58,42 +57,39 @@ class AdminActivity : AppCompatActivity() {
 
                 save1.setOnClickListener {
                     if (!TextUtils.isEmpty(question.text) && !TextUtils.isEmpty(answer1.text) && !TextUtils.isEmpty(answer2.text) && !TextUtils.isEmpty(answer3.text) && !TextUtils.isEmpty(correctAnswer.text)){
+                        if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
+                            quiz = hashMapOf()
+                            quiz["Domanda"] = question.text.toString()
+                            quiz["Risposta1"] = answer1.text.toString()
+                            quiz["Risposta2"] = answer2.text.toString()
+                            quiz["Risposta3"] = answer3.text.toString()
+                            quiz["Risposta_Corretta"] = correctAnswer.text.toString()
 
-                        contatore += 1
-                        quiz = hashMapOf()
-                        quiz["Domanda"] = question.text.toString()
-                        quiz["Risposta1"] = answer1.text.toString()
-                        quiz["Risposta2"] = answer2.text.toString()
-                        quiz["Risposta3"] = answer3.text.toString()
-                        quiz["Risposta_Corretta"] = correctAnswer.text.toString()
-
-                        Blocco_Domanda["Blocco_Domanda_${contatore}"] = quiz
-
-                        contenitore.add(Blocco_Domanda)
-
-                        dialog1.dismiss()
-
+                            contenitore.add(quiz)
+                            dialog1.dismiss()
+                        }else{
+                            Toast.makeText(this, "La risposta corretta deve essere uguale a una delle risposte", Toast.LENGTH_LONG).show()
+                        }
                     }else{
                         Toast.makeText(this, "Non hai inserito un campo", Toast.LENGTH_LONG).show()
                     }
                 }
-
             }
 
             save1.setOnClickListener {
                 if (!TextUtils.isEmpty(nomeQuiz.text)){
                     quizName["Nome_quiz"] = nomeQuiz.text.toString()
-                    db.collection("Users").document(appoggioID).set(quizName, SetOptions.merge())
+                    db.collection(appoggioID).document("quizName").set(quizName)
                         .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
                         .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
 
                     for (i in 0 until contenitore.size){
-
                         var appoggio = contenitore.get(i)
-                        db.collection("Users").document(appoggioID).set(appoggio, SetOptions.merge())
+                        contatore += 1
+
+                        db.collection(appoggioID).document("Question${contatore}").set(appoggio)
                             .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
                             .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
-
                     }
 
                     dialog.dismiss()
@@ -101,7 +97,6 @@ class AdminActivity : AppCompatActivity() {
                     Toast.makeText(this, "Non hai inserito il nome del Quiz", Toast.LENGTH_LONG).show()
                 }
             }
-
         }
 
         modify.setOnClickListener {
