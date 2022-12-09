@@ -5,17 +5,18 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.SetOptions
 import com.seriousgame.clyf.R
-import com.seriousgame.clyf.auth.SignIn
 import com.seriousgame.clyf.auth.appoggioID
 import com.seriousgame.clyf.auth.db
 import kotlinx.android.synthetic.main.activity_admin.*
-import kotlinx.android.synthetic.main.popup.*
-import kotlinx.android.synthetic.main.popup.view.*
+import kotlinx.android.synthetic.main.popup_create.*
+import kotlinx.android.synthetic.main.popup_create.view.*
 import kotlinx.android.synthetic.main.popup_domande.view.*
+import kotlinx.android.synthetic.main.popup_modify.*
 
 class AdminActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +26,16 @@ class AdminActivity : AppCompatActivity() {
         create.setOnClickListener {
             var dialogBuilder : AlertDialog.Builder
             var dialog : AlertDialog?
-            var view = LayoutInflater.from(this).inflate(R.layout.popup, null, false)
+            var view = LayoutInflater.from(this).inflate(R.layout.popup_create, null, false)
             var nomeQuiz = view.editText
             var questionButton = view.question_menu
             var save1 = view.save1
             var quiz : MutableMap<String, Any>
             var Blocco_Domanda : MutableMap<String, Any> = hashMapOf()
             var quizName : MutableMap<String, Any> = hashMapOf()
+
+            var contenitore : ArrayList<MutableMap<String, Any>> = ArrayList()
+            var contatore : Int = 0
 
             dialogBuilder = AlertDialog.Builder(this).setView(view)
             dialog = dialogBuilder!!.create()
@@ -55,6 +59,7 @@ class AdminActivity : AppCompatActivity() {
                 save1.setOnClickListener {
                     if (!TextUtils.isEmpty(question.text) && !TextUtils.isEmpty(answer1.text) && !TextUtils.isEmpty(answer2.text) && !TextUtils.isEmpty(answer3.text) && !TextUtils.isEmpty(correctAnswer.text)){
 
+                        contatore += 1
                         quiz = hashMapOf()
                         quiz["Domanda"] = question.text.toString()
                         quiz["Risposta1"] = answer1.text.toString()
@@ -62,7 +67,9 @@ class AdminActivity : AppCompatActivity() {
                         quiz["Risposta3"] = answer3.text.toString()
                         quiz["Risposta_Corretta"] = correctAnswer.text.toString()
 
-                        Blocco_Domanda["Blocco_Domanda"] = quiz
+                        Blocco_Domanda["Blocco_Domanda_${contatore}"] = quiz
+
+                        contenitore.add(Blocco_Domanda)
 
                         dialog1.dismiss()
 
@@ -76,12 +83,19 @@ class AdminActivity : AppCompatActivity() {
             save1.setOnClickListener {
                 if (!TextUtils.isEmpty(nomeQuiz.text)){
                     quizName["Nome_quiz"] = nomeQuiz.text.toString()
-                    db.collection("Users").document(appoggioID).set(Blocco_Domanda, SetOptions.merge())
-                        .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
-                        .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
                     db.collection("Users").document(appoggioID).set(quizName, SetOptions.merge())
                         .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
                         .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
+
+                    for (i in 0 until contenitore.size){
+
+                        var appoggio = contenitore.get(i)
+                        db.collection("Users").document(appoggioID).set(appoggio, SetOptions.merge())
+                            .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
+                            .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
+
+                    }
+
                     dialog.dismiss()
                 }else{
                     Toast.makeText(this, "Non hai inserito il nome del Quiz", Toast.LENGTH_LONG).show()
@@ -89,6 +103,19 @@ class AdminActivity : AppCompatActivity() {
             }
 
         }
+
+        modify.setOnClickListener {
+            var dialogBuilder3 : AlertDialog.Builder
+            var dialog3 : AlertDialog?
+            var view3 = LayoutInflater.from(this).inflate(R.layout.popup_modify, null, false)
+
+            dialogBuilder3 = AlertDialog.Builder(this).setView(view3)
+            dialog3 = dialogBuilder3!!.create()
+            dialog3.show()
+
+        }
+
+
 
 
 
