@@ -28,6 +28,23 @@
 8. Testing
 9. Commit e push
 
+**Giovedì 8 Dicembre**
+1. Connessione tra varie UI
+2. Testing
+3. Commit e push
+
+**Venerdì 9 Dicembre**
+1. Implementazione CRUD (Create)
+2. Ideazione modify CRUD (Update)
+3. Creazione popup per modifica (Update)
+
+**Lunedì 12 Dicembre** 
+1. Implementazione modify CRUD (Update)
+2. Implementazione delete CRUD (Delete)
+3. Ulteriore implementazione create - add per aggiungere singoli elementi (Create)
+4. Creazione tasto "esci" per tornare a pagina inziale app
+5. Testing
+
 ## Code Rules
 
 - Data la scelta della metodologia RAD, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (*meglio da più dev assieme*).
