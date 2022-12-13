@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.seriousgame.clyf.admin.AdminActivity
+import com.seriousgame.clyf.admin.ViewAdminActivity
 import com.seriousgame.clyf.databinding.ActivitySignInBinding
 
 
@@ -35,7 +36,7 @@ class SignIn : AppCompatActivity() {
                         //1st inner if - S.
                         if (it.isSuccessful) { //successful case - S.
                             supportID = email
-                            val intent = Intent(this, AdminActivity::class.java) //define intent - S.
+                            val intent = Intent(this, ViewAdminActivity::class.java) //define intent - S.
                             startActivity(intent) //takes you to Admin activity - S.
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
