@@ -2,15 +2,11 @@ package com.seriousgame.clyf.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.seriousgame.clyf.MainActivity
 import com.seriousgame.clyf.admin.AdminActivity
 import com.seriousgame.clyf.databinding.ActivitySignInBinding
-import java.util.Objects
 
 
 class SignIn : AppCompatActivity() {
@@ -38,7 +34,7 @@ class SignIn : AppCompatActivity() {
 
                         //1st inner if - S.
                         if (it.isSuccessful) { //successful case - S.
-                            appoggioID = email
+                            supportID = email
                             val intent = Intent(this, AdminActivity::class.java) //define intent - S.
                             startActivity(intent) //takes you to Admin activity - S.
                         } else {
