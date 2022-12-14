@@ -20,13 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin.AdminActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".auth.SignUp"
             android:exported="true">
             <meta-data

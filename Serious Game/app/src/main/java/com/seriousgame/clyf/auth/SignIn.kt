@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.seriousgame.clyf.admin.AdminActivity
 import com.seriousgame.clyf.admin.ViewAdminActivity
 import com.seriousgame.clyf.databinding.ActivitySignInBinding
 
