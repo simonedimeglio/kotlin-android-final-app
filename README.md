@@ -45,6 +45,24 @@
 4. Creazione tasto "esci" per tornare a pagina inziale app
 5. Testing
 
+**Martedì 13 Dicembre** 
+1. Implementazione e predisposizione UI per stampa domande 
+2. Bug fix 
+3. Testing su app globale 
+4. Implementazione tasto "feature" per aggiornamento stampa domande 
+
+**Mercoledì 14 Dicembre** 
+1. Test CREATE
+2. Test READ
+3. Test UPDATE
+4. Test DELETE
+5. Collegamento crud e predisposizione ad interfaccia realizzata
+6. Testing su app globale 
+7. Bug fix
+8. Code Refactoring 
+9. Dev talk 
+10. Commit e push 
+
 ## Code Rules
 
 - Data la scelta della metodologia RAD, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (*meglio da più dev assieme*).
