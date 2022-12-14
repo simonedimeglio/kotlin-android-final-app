@@ -57,7 +57,7 @@
 3. Test UPDATE
 4. Test DELETE
 5. Collegamento crud e predisposizione ad interfaccia realizzata
-6. Testing su app globale 
+6. Testing su app globale (Conferma funzionamento totale CRUD)
 7. Bug fix
 8. Code Refactoring 
 9. Dev talk 
