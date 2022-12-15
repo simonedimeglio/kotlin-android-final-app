@@ -451,6 +451,8 @@ class ViewAdminActivity : AppCompatActivity() {
                                 Toast.makeText(this, "Password already used", Toast.LENGTH_LONG).show()
                             }else{
                                 db.collection("quizPasswords").document().set(dataAdder)
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
                             }
                         }
                 }else{

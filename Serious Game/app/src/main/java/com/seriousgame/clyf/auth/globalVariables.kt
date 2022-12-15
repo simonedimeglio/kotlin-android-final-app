@@ -4,6 +4,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 var supportID : String = ""
 var nicknameID : String = ""
+var score : Int = 0
 @SuppressLint("StaticFieldLeak")
 var db = FirebaseFirestore.getInstance()
 

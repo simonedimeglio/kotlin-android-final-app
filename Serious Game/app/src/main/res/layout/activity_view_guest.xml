@@ -7,39 +7,84 @@
     tools:context=".guest.ViewGuestActivity"
     android:layout_gravity="center" >
 
+
     <TextView
         android:id="@+id/titleVT"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="wait..."
-        android:textSize="20dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.063" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewIdGuest"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+    <TextView
+        android:id="@+id/questionGuestView"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="DOMANDA"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleVT"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintTop_toBottomOf="@id/titleVT"
+        app:layout_constraintVertical_bias="0.135" />
+
+
+    <Button
+        android:id="@+id/answer1GuestView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="RISPOSTA1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionGuestView"
+        app:layout_constraintVertical_bias="0.249" />
+
+    <Button
+        android:id="@+id/answer2GuestView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="RISPOSTA2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@id/answer1GuestView"
+        app:layout_constraintTop_toBottomOf="@id/questionGuestView"
+        app:layout_constraintVertical_bias="0.249" />
+
+    <Button
+        android:id="@+id/answer3GuestView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="RISPOSTA3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionGuestView"
+        app:layout_constraintVertical_bias="0.541" />
 
     <Button
         android:id="@+id/guestSave"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="save"
-        app:layout_constraintTop_toBottomOf="@id/recycleViewIdGuest"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-         />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884" />
 </androidx.constraintlayout.widget.ConstraintLayout>
