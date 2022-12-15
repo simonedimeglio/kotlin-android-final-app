@@ -39,19 +39,6 @@ class SignUp : AppCompatActivity() {
 
                         //2nd inner if - S.
                         if (it.isSuccessful){ //succesful case - S.
-
-                            //insert the user information into the MutableMap - F.
-                            var informazioni : MutableMap<String, Any> = hashMapOf()
-                            informazioni["Email"] = email
-                            informazioni["Pass"] = pass
-
-                            //insert the MutableMap (information) into the MutableMap (dati) - F.
-                            var dati : MutableMap<String, Any>  = hashMapOf()
-                            dati["Dati"] = informazioni
-
-                            //add a new document with email as ID and insert into it the MultableMap named dati - F.
-                            db.collection("Users").document(email).set(dati)
-
                             val intent = Intent(this, SignIn::class.java) //define intent - S.
                             startActivity(intent)   //takes you to SignIn activity - F.
                         }else{

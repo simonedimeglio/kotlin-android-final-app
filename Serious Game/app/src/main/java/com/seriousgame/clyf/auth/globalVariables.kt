@@ -3,6 +3,7 @@ import android.annotation.SuppressLint
 import com.google.firebase.firestore.FirebaseFirestore
 
 var supportID : String = ""
+var nicknameID : String = ""
 @SuppressLint("StaticFieldLeak")
 var db = FirebaseFirestore.getInstance()
 

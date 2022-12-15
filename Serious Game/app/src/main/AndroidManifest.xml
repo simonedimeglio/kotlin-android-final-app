@@ -13,6 +13,20 @@
         android:theme="@style/Theme.CLYF"
         tools:targetApi="31">
         <activity
+            android:name=".guest.GuestDataActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".guest.ViewGuestActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".admin.ViewAdminActivity"
             android:exported="true">
             <meta-data

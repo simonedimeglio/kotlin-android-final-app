@@ -21,6 +21,8 @@ import com.seriousgame.clyf.auth.supportID
 import kotlinx.android.synthetic.main.activity_view_admin.*
 import kotlinx.android.synthetic.main.popup_create.view.*
 import kotlinx.android.synthetic.main.popup_delete.view.*
+import kotlinx.android.synthetic.main.popup_exit.*
+import kotlinx.android.synthetic.main.popup_exit.view.*
 import kotlinx.android.synthetic.main.popup_modify.view.*
 import kotlinx.android.synthetic.main.popup_questions.view.*
 import kotlinx.coroutines.async
@@ -65,21 +67,15 @@ class ViewAdminActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_admin)
 
-        // on below line we are initializing our variables.
         recyclerView = findViewById(R.id.recyclerViewId)
         contenitore = ArrayList()
         layoutManager = LinearLayoutManager(this)
 
-        // on below line we are adding our list to our adapter.
         adapter = QuizAdapter(contenitore, this)
 
-        // on below line we are setting
-        // adapter to our recycler view.
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
 
-        // on below line we are adding click listener
-        // for our add button.
         refresh.setOnClickListener {
             db.collection(supportID).whereNotEqualTo("Question", null).get()
                 .addOnSuccessListener { result ->
@@ -101,8 +97,7 @@ class ViewAdminActivity : AppCompatActivity() {
                     }
                 }
         }
-        // on below line we are notifying adapter
-        // that data in adapter has been updated.
+
         adapter.notifyDataSetChanged()
 
         create.setOnClickListener {
@@ -425,12 +420,45 @@ class ViewAdminActivity : AppCompatActivity() {
         }
 
         exit.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)   //return to the MainActivity - Y.
+
+            var dialogBuilderExit : AlertDialog.Builder
+            var dialogExit : AlertDialog?
+            var viewExit = LayoutInflater.from(this).inflate(R.layout.popup_exit, null, false)
+            dialogBuilderExit = AlertDialog.Builder(this).setView(viewExit)
+            dialogExit = dialogBuilderExit!!.create()
+            dialogExit.show()
+
+            var quizPasswordET = viewExit.QuizPasswordEditText
+            var quizPasswordSave = viewExit.QuizPasswordSave
+            var quizPassword : String
+            var dataAdder : MutableMap<String, Any>
+
+            quizPasswordSave.setOnClickListener {
+                quizPassword = quizPasswordET.text.toString()
+                if (!TextUtils.isEmpty(quizPassword)){
+                    dataAdder = hashMapOf()
+                    dataAdder["quizPassword"] = quizPassword
+                    dataAdder["ID"] = supportID
+
+
+                    db.collection("quizPasswords").whereEqualTo("quizPassword", quizPassword).get()
+                        .addOnSuccessListener{ result ->
+                            var supportPass = ""
+                            for (document in result){
+                                supportPass = document.data["quizPassword"].toString()
+                            }
+                            if (supportPass == quizPassword){
+                                Toast.makeText(this, "Password already used", Toast.LENGTH_LONG).show()
+                            }else{
+                                db.collection("quizPasswords").document().set(dataAdder)
+                            }
+                        }
+                }else{
+                    Toast.makeText(this, "Quiz password field empty", Toast.LENGTH_LONG).show()
+                }
+            }
+
         }
-
-
-
 
     }
 
