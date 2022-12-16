@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/apertura" >
+    tools:context=".MainActivity">
 
+    <pl.droidsonroids.gif.GifImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:scaleY="1.1"
+        android:scaleX="1.1"
+        android:src="@drawable/home" />
 
     <Button
         android:id="@+id/creator"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="CREATORE"
+        android:text="creator"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,7 +31,8 @@
         android:id="@+id/guest"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="OSPITE"
+        android:text="guest"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

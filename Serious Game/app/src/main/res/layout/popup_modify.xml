@@ -4,20 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/modifywall">
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_margin="70dp" />
+        android:background="@color/white"
+        android:layout_margin="50dp"
+        android:padding="15dp"/>
 
     <Button
         android:id="@+id/modify1"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Modify"
+        android:padding="15dp"
         android:layout_marginBottom="50dp"/>
-
 
 </LinearLayout>

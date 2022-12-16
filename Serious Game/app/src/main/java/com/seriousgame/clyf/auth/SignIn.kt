@@ -38,12 +38,12 @@ class SignIn : AppCompatActivity() {
                             val intent = Intent(this, ViewAdminActivity::class.java) //define intent - S.
                             startActivity(intent) //takes you to Admin activity - S.
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
+                            Toast.makeText(this, "wrong email or password", Toast.LENGTH_LONG).show() //error message - F.
                         }
                         //end 1st inner if - S.
                     }
             } else{
-                Toast.makeText(this, "Errore: completa tutti i campi", Toast.LENGTH_LONG).show()    //error message - F.
+                Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_LONG).show()    //error message - F.
             }
             //end if - S.
         }

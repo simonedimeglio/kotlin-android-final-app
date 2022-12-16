@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.Query
 import com.seriousgame.clyf.MainActivity
@@ -87,24 +88,36 @@ class ViewGuestActivity : AppCompatActivity() {
                 contatore += 1
                 adderStructure(questions, questionView, answer1View, answer2View, answer3View)
                 answer1View.setOnClickListener {
-                    if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                        guestCorrectAnswers.set(contatore, answer1View.text.toString())
+                    if (contatore < originalSize){
+                        if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                            guestCorrectAnswers.set(contatore, answer1View.text.toString())
+                        }else{
+                            guestCorrectAnswers.add(contatore, answer1View.text.toString())
+                        }
                     }else{
-                        guestCorrectAnswers.add(contatore, answer1View.text.toString())
+                        Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                     }
                 }
                 answer2View.setOnClickListener {
-                    if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                        guestCorrectAnswers.set(contatore, answer2View.text.toString())
+                    if (contatore < originalSize){
+                        if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                            guestCorrectAnswers.set(contatore, answer2View.text.toString())
+                        }else{
+                            guestCorrectAnswers.add(contatore, answer2View.text.toString())
+                        }
                     }else{
-                        guestCorrectAnswers.add(contatore, answer2View.text.toString())
+                        Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                     }
                 }
                 answer3View.setOnClickListener {
-                    if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                        guestCorrectAnswers.set(contatore, answer3View.text.toString())
+                    if (contatore < originalSize){
+                        if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                            guestCorrectAnswers.set(contatore, answer3View.text.toString())
+                        }else{
+                            guestCorrectAnswers.add(contatore, answer3View.text.toString())
+                        }
                     }else{
-                        guestCorrectAnswers.add(contatore, answer3View.text.toString())
+                        Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -113,20 +126,16 @@ class ViewGuestActivity : AppCompatActivity() {
                         guestCorrectAnswers.add("")
                     }
                     contatore+= 1
-                    if (contatore == originalSize){
-                        Log.d("FINE", "FINE")
-                        Log.d("QUESTION", questions.toString())
-                        Log.d("CORRECT_ANSWER", correctAnswers.toString())
-                        Log.d("GUEST", guestCorrectAnswers.toString())
-                        for (i in 0 until guestCorrectAnswers.size){
-                            if (correctAnswers.get(i).equals(guestCorrectAnswers.get(i))){
-                                score += 1
-                            }else{
-                                continue
+                    if (contatore >= originalSize){
+                        if (contatore == originalSize){
+                            for (i in 0 until guestCorrectAnswers.size){
+                                if (correctAnswers.get(i).equals(guestCorrectAnswers.get(i))){
+                                    score += 1
+                                }else{
+                                    continue
+                                }
                             }
                         }
-                        Log.d("SCORE", score.toString())
-
                         var dialogBuilderScore : AlertDialog.Builder
                         var dialogScore : AlertDialog?
                         var viewScore = LayoutInflater.from(this).inflate(R.layout.popup_score, null, false)
@@ -173,29 +182,39 @@ class ViewGuestActivity : AppCompatActivity() {
                                     startActivity(intent)
                                 }
                         }
-
-
                     }else{
                         adderStructure(questions, questionView, answer1View, answer2View, answer3View)
                         answer1View.setOnClickListener {
-                            if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                                guestCorrectAnswers.set(contatore, answer1View.text.toString())
+                            if (contatore < originalSize){
+                                if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                                    guestCorrectAnswers.set(contatore, answer1View.text.toString())
+                                }else{
+                                    guestCorrectAnswers.add(contatore, answer1View.text.toString())
+                                }
                             }else{
-                                guestCorrectAnswers.add(contatore, answer1View.text.toString())
+                                Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                             }
                         }
                         answer2View.setOnClickListener {
-                            if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                                guestCorrectAnswers.set(contatore, answer2View.text.toString())
+                            if (contatore < originalSize){
+                                if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                                    guestCorrectAnswers.set(contatore, answer2View.text.toString())
+                                }else{
+                                    guestCorrectAnswers.add(contatore, answer2View.text.toString())
+                                }
                             }else{
-                                guestCorrectAnswers.add(contatore, answer2View.text.toString())
+                                Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                             }
                         }
                         answer3View.setOnClickListener {
-                            if (guestCorrectAnswers.size.equals(correctAnswers.size)){
-                                guestCorrectAnswers.set(contatore, answer3View.text.toString())
+                            if (contatore < originalSize){
+                                if (guestCorrectAnswers.size.equals(correctAnswers.size)){
+                                    guestCorrectAnswers.set(contatore, answer3View.text.toString())
+                                }else{
+                                    guestCorrectAnswers.add(contatore, answer3View.text.toString())
+                                }
                             }else{
-                                guestCorrectAnswers.add(contatore, answer3View.text.toString())
+                                Toast.makeText(this, "you can no longer edit the answers", Toast.LENGTH_LONG).show()
                             }
                         }
 

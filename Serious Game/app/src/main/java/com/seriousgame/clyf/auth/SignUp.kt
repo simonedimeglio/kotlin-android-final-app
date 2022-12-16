@@ -38,20 +38,24 @@ class SignUp : AppCompatActivity() {
                         //FirebaseAuth: password must have almost six char - S.
 
                         //2nd inner if - S.
-                        if (it.isSuccessful){ //succesful case - S.
+                        if (it.isSuccessful){ //successful case - S.
                             val intent = Intent(this, SignIn::class.java) //define intent - S.
                             startActivity(intent)   //takes you to SignIn activity - F.
                         }else{
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show() //error message - F.
+                            if (pass.length < 6){
+                                Toast.makeText(this, "the password must contain at least six chars", Toast.LENGTH_LONG).show()
+                            }else{
+                                Toast.makeText(this, "email already used", Toast.LENGTH_LONG).show() //error message - F.
+                            }
                         }
                         //end 2nd inner if - S.
                     }
                 }else{
-                    Toast.makeText(this, "Le password non sono coincidenti", Toast.LENGTH_LONG).show()  //error message - F.
+                    Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show()  //error message - F.
                 }
                 //end 1st inner if - S.
             }else{
-                Toast.makeText(this, "Errore: completa tutti i campi", Toast.LENGTH_LONG).show()    //error message - F.
+                Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_LONG).show()    //error message - F.
             }
             //end if - S.
         }
