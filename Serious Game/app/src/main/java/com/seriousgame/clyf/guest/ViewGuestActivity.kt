@@ -4,18 +4,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.firestore.Query
 import com.seriousgame.clyf.MainActivity
 import com.seriousgame.clyf.R
 import com.seriousgame.clyf.admin.ViewAdminActivity
-import com.seriousgame.clyf.auth.db
-import com.seriousgame.clyf.auth.score
-import com.seriousgame.clyf.auth.supportID
+import com.seriousgame.clyf.auth.*
 import kotlinx.android.synthetic.main.activity_view_guest.*
+import kotlinx.android.synthetic.main.popup_score.view.*
 
 class ViewGuestActivity : AppCompatActivity() {
 
-    fun adderStructure (x : ArrayList<String>, questionTV : TextView, answer1TV : TextView, answer2TV : TextView, answer3TV : TextView){
+    fun adderStructure (x : ArrayList<String>, questionTV : TextView, answer1TV : Button, answer2TV : Button, answer3TV : Button){
 
         var indexSupport = x.get(0)
 
@@ -123,8 +126,55 @@ class ViewGuestActivity : AppCompatActivity() {
                             }
                         }
                         Log.d("SCORE", score.toString())
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+
+                        var dialogBuilderScore : AlertDialog.Builder
+                        var dialogScore : AlertDialog?
+                        var viewScore = LayoutInflater.from(this).inflate(R.layout.popup_score, null, false)
+                        dialogBuilderScore = AlertDialog.Builder(this).setView(viewScore)
+                        dialogScore = dialogBuilderScore!!.create()
+                        dialogScore.show()
+
+                        var scoreTV = viewScore.scoreTV
+                        var leaderboardBtn = viewScore.leaderboardButton
+                        var homeBtn = viewScore.homeButton
+                        var scoreSupport : MutableMap<String, Any> = hashMapOf()
+                        scoreSupport["ID"] = supportID
+                        scoreSupport["Nickname"] = nicknameID
+                        scoreSupport["Score"] = score.toString()
+
+                        scoreTV.text = "${score}/${correctAnswers.size}"
+                        leaderboardBtn.setOnClickListener {
+                            db.collection("scores").document().set(scoreSupport)
+                            db.collection("scores").whereEqualTo("ID", supportID).orderBy("Score", Query.Direction.DESCENDING).get()
+                                .addOnSuccessListener { result ->
+                                    scores.clear()
+                                    for (document in result){
+                                        var arraySupport : ArrayList<String> = ArrayList()
+                                        arraySupport.add(document.data["Nickname"].toString())
+                                        arraySupport.add(document.data["Score"].toString())
+                                        scores.add(arraySupport)
+                                    }
+                                    val intent = Intent(this, LeaderboardActivity::class.java)
+                                    startActivity(intent)
+                                }
+                        }
+                        homeBtn.setOnClickListener {
+                            db.collection("scores").document().set(scoreSupport)
+                            db.collection("scores").whereEqualTo("ID", supportID).orderBy("Score", Query.Direction.DESCENDING).get()
+                                .addOnSuccessListener { result ->
+                                    scores.clear()
+                                    for (document in result){
+                                        var arraySupport : ArrayList<String> = ArrayList()
+                                        arraySupport.add(document.data["Nickname"].toString())
+                                        arraySupport.add(document.data["Score"].toString())
+                                        scores.add(arraySupport)
+                                    }
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    startActivity(intent)
+                                }
+                        }
+
+
                     }else{
                         adderStructure(questions, questionView, answer1View, answer2View, answer3View)
                         answer1View.setOnClickListener {
