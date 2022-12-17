@@ -26,6 +26,7 @@ class LeaderboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_leaderboard)
 
         var home = homeLeaderboardButton
+        var refresh = refreshLeaderboardButton
         recyclerView = findViewById(R.id.leaderboardRecycleView)
         layoutManager = LinearLayoutManager(this)
         adapter = LeaderboardAdapter(scores, this)
@@ -36,6 +37,23 @@ class LeaderboardActivity : AppCompatActivity() {
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        refresh.setOnClickListener {
+            db.collection("scores").whereEqualTo("ID", supportID).orderBy("Score", Query.Direction.DESCENDING).get()
+                .addOnSuccessListener { result2 ->
+                    scores.clear()
+                    for (document in result2){
+                        var arraySupport : ArrayList<String> = ArrayList()
+                        arraySupport.add(document.data["Nickname"].toString())
+                        arraySupport.add(document.data["Score"].toString())
+                        scores.add(arraySupport)
+                    }
+
+                    adapter = LeaderboardAdapter(scores, this)
+                    recyclerView.adapter = adapter
+
+                }
         }
 
 

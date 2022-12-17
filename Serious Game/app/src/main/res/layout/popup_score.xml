@@ -3,7 +3,8 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/scorepopwall">
 
     <TextView
         android:id="@+id/titleScore"
@@ -11,6 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Your score is:"
         android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="40dp"/>
@@ -20,6 +23,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="TextView"
         android:textSize="30dp"
         android:layout_marginBottom="50dp"/>
@@ -29,6 +34,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Leaderboard"
+        android:padding="15dp"
         android:layout_marginBottom="30dp"/>
 
     <Button
@@ -36,6 +42,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="home"
+        android:padding="15dp"
         android:layout_marginBottom="40dp"/>
 
 

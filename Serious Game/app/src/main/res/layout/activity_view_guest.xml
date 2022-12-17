@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".guest.ViewGuestActivity"
-    android:layout_gravity="center" >
+    android:layout_gravity="center"
+    android:background="@drawable/guestquizwall">
 
 
     <TextView
@@ -15,6 +16,8 @@
         android:gravity="center"
         android:text="wait..."
         android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -27,8 +30,10 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="DOMANDA"
+        android:text="QUESTION"
         android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -42,7 +47,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="RISPOSTA1"
+        android:text="ANSWER1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
@@ -55,7 +60,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="RISPOSTA2"
+        android:text="ANSWER2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
@@ -68,7 +73,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="RISPOSTA3"
+        android:text="ANSWER3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -86,5 +91,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:padding="15dp"
         app:layout_constraintVertical_bias="0.884" />
 </androidx.constraintlayout.widget.ConstraintLayout>

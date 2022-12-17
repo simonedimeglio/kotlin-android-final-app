@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guest.LeaderboardActivity">
+    tools:context=".guest.LeaderboardActivity"
+    android:background="@drawable/leaderboardwall">
 
     <TextView
         android:id="@+id/leaderboardTitleTV"
@@ -13,6 +14,8 @@
         android:text="LEADERBOARD"
         android:textSize="30dp"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -33,13 +36,25 @@
 
     <Button
         android:id="@+id/homeLeaderboardButton"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/leaderboardRecycleView"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <Button
+        android:id="@+id/refreshLeaderboardButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@id/homeLeaderboardButton"
         app:layout_constraintTop_toBottomOf="@id/leaderboardRecycleView"
         app:layout_constraintVertical_bias="0.244" />
 
