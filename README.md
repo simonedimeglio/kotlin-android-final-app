@@ -1,9 +1,11 @@
-# Clyf - Serious Game
+![CLYF](https://user-images.githubusercontent.com/78272736/208240644-777ab977-d9af-4c4f-9660-282e1ea1b6c4.jpg)
 
-![clyf](https://user-images.githubusercontent.com/78272736/206232503-3be3ab33-d260-41a0-a4c3-bd21e64bc04d.png)
+<br/><br/><br/>
 
+![daily-project-report](https://user-images.githubusercontent.com/78272736/208240863-6c471c38-df5c-438a-a512-fe1b06634999.jpg)
 
-## Roadmap 
+<br/>
+
 **Martedì 6 Dicembre**
 1. Realizzato schema ER
 2. Ipotizzata prima versione UI (prima schermata app, palette colori, stile)
@@ -93,7 +95,11 @@
 5. Test generale di funzionamento app con nuova UI 
 6. Commit e push
 
-## Code Rules
+<br/><br/><br/>
+
+![code-rules](https://user-images.githubusercontent.com/78272736/208240996-5096bf09-8e85-45b1-82c0-960d57e1dc22.jpg)
+
+<br/>
 
 - Data la scelta della metodologia RAD, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (*meglio da più dev assieme*).
 - Il commento o ogni blocco di commenti deve essere sempre firmato dalle iniziali del dev come nell'esempio seguente (*s per Simone, f per Filippo, j per Jasmine, g per Giulia*)
@@ -108,11 +114,20 @@
 - Documentare al meglio il codice al termine di ogni giornata lavorativa 
 
 
-## Other Team Rules
+<br/><br/><br/>
+
+![other-rules](https://user-images.githubusercontent.com/78272736/208241136-ac52fef8-6a83-4703-8418-48e6c28d7104.jpg)
+
+<br/>
+
 - Sono previste riunioni frequenti per verificare lo stato di avanzamento del codice
 - Qualità e funzionalità sono in primo piano: meglio meno, ma fatto bene. 
 - Chiedere aiuto non è un reato
 - Il codice è del team, il risultato è del team, i problemi sono del team.
 - Scrivi codice che tutti possano leggere, anche dev esterni al gruppo. Se non si capisce, modifica.
 
+
+<br/><br/><br/>
+
+![credits](https://user-images.githubusercontent.com/78272736/208241311-75116c79-9ba5-4049-ac95-d7b849116189.jpg)
 
