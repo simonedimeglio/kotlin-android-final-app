@@ -342,8 +342,8 @@ class ViewAdminActivity : AppCompatActivity() {
 
                         modifyButton.setOnClickListener {
                             if (questionToUpdate != null){
-
-                                for (i in 0 until contenitore.size){
+                                var originalSize = contenitore.size
+                                for (i in 0 until originalSize){
                                     var supporto = contenitore.get(i)
                                     var supporto2 = supporto.get(0)
 
@@ -355,7 +355,7 @@ class ViewAdminActivity : AppCompatActivity() {
                                 //popup creation - G.
                                 var dialogBuilderQuestion : AlertDialog.Builder
                                 var dialogQuestion : AlertDialog?
-                                var viewQuestion = LayoutInflater.from(applicationContext).inflate(R.layout.popup_questions, null, false)
+                                var viewQuestion = LayoutInflater.from(this).inflate(R.layout.popup_questions, null, false)
                                 dialogBuilderQuestion = AlertDialog.Builder(this).setView(viewQuestion)
                                 dialogQuestion = dialogBuilderQuestion!!.create()
                                 dialogQuestion.show()
@@ -467,14 +467,16 @@ class ViewAdminActivity : AppCompatActivity() {
 
                         deleteButton.setOnClickListener {
                             if (questionToDelete != null){
-
-                                for (i in 0 until contenitore.size){
+                                var originalSize = contenitore.size
+                                Log.d("CONTENITORE", contenitore.toString())
+                                for (i in 0 until originalSize){
                                     var supporto = contenitore.get(i)
                                     var supporto2 = supporto.get(0)
 
                                     if (supporto2 == questionToDelete){
                                         contenitore.removeAt(i)
                                         adapter.notifyDataSetChanged()
+                                        break
                                     }
                                 }
 
