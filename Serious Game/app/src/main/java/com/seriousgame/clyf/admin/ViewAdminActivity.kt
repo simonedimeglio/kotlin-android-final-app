@@ -322,32 +322,41 @@ class ViewAdminActivity : AppCompatActivity() {
             db.collection(supportID).whereNotEqualTo("Quiz_name", null).get()
                 .addOnSuccessListener { result ->
                     var controlSupport = false
+                    var quizID = ""
                     for (document in result){
                         controlSupport = true
+                        quizID = document.id
                     }
                     if (controlSupport){
                         //query the database and take all the documents with the component question not null - Y.
                         db.collection(supportID).whereNotEqualTo("Question", null).get()
                             .addOnSuccessListener { result ->
+                                var controlSupport = false
                                 for (document in result) {
                                     questionList.add(document.data["Question"].toString())   //insert the data contained in the question field into the array - Y.
+                                    controlSupport = true
                                 }
 
-                                //creating the spinner and inserting data into it - Y.
-                                var spinner : Spinner = viewModify.spinner
-                                var adapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, questionList)
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                                spinner.adapter = adapter
+                                if (controlSupport){
+                                    //creating the spinner and inserting data into it - Y.
+                                    var spinner : Spinner = viewModify.spinner
+                                    var adapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, questionList)
+                                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                                    spinner.adapter = adapter
 
-                                spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-                                    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                                        questionToUpdate = questionList[position]   //insertion of the question chosen by the user in the support variable - Y.
+                                    spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+                                        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                            questionToUpdate = questionList[position]   //insertion of the question chosen by the user in the support variable - Y.
+                                        }
+                                        override fun onNothingSelected(p0: AdapterView<*>?) {
+                                            Toast.makeText(applicationContext, "Nothing selected", Toast.LENGTH_LONG).show()    //error message - Y.
+                                        }
                                     }
-                                    override fun onNothingSelected(p0: AdapterView<*>?) {
-                                        Toast.makeText(applicationContext, "Nothing selected", Toast.LENGTH_LONG).show()    //error message - Y.
-                                    }
+                                }else{
+                                    db.collection(supportID).document(quizID).delete()
+                                    Toast.makeText(this, "there is nothing to change", Toast.LENGTH_LONG).show()
+                                    dialogModify.dismiss()
                                 }
-
                             }
 
                         modifyButton.setOnClickListener {
@@ -451,34 +460,44 @@ class ViewAdminActivity : AppCompatActivity() {
 
             db.collection(supportID).whereNotEqualTo("Quiz_name", null).get()
                 .addOnSuccessListener { result ->
+                    var quizID = ""
                     var controlSupport = false
                     for (document in result){
                         controlSupport = true
+                        quizID = document.id
+
                     }
                     if (controlSupport){
                         //query the database and take all the documents with the component question not null - S.
                         db.collection(supportID).whereNotEqualTo("Question", null)
                             .get()
                             .addOnSuccessListener { result ->
+                                var controlSupport = false
                                 for (document in result) {
                                     questionList.add(document.data["Question"].toString())  //insert the data contained in the question field into the array - S.
+                                    controlSupport = true
                                 }
 
-                                //creating the spinner and inserting data into it - S.
-                                var spinner : Spinner = viewDelete.spinner_delete
-                                var adapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, questionList)
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                                spinner.adapter = adapter
+                                if (controlSupport){
+                                    //creating the spinner and inserting data into it - S.
+                                    var spinner : Spinner = viewDelete.spinner_delete
+                                    var adapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, questionList)
+                                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                                    spinner.adapter = adapter
 
-                                spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-                                    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                                        questionToDelete = questionList[position]   //insertion of the question chosen by the user in the support variable - S.
+                                    spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+                                        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                            questionToDelete = questionList[position]   //insertion of the question chosen by the user in the support variable - S.
+                                        }
+                                        override fun onNothingSelected(p0: AdapterView<*>?) {
+                                            Toast.makeText(applicationContext, "Nothing selected", Toast.LENGTH_LONG).show()
+                                        }
                                     }
-                                    override fun onNothingSelected(p0: AdapterView<*>?) {
-                                        Toast.makeText(applicationContext, "Nothing selected", Toast.LENGTH_LONG).show()
-                                    }
+                                }else{
+                                    db.collection(supportID).document(quizID).delete()
+                                    Toast.makeText(this, "there is nothing to delete", Toast.LENGTH_LONG).show()
+                                    dialogDelete.dismiss()
                                 }
-
                             }
 
                         deleteButton.setOnClickListener {
