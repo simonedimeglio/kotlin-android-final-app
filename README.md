@@ -1,99 +1,112 @@
 ![CLYF](https://user-images.githubusercontent.com/78272736/208240644-777ab977-d9af-4c4f-9660-282e1ea1b6c4.jpg)
 
-<br/><br/><br/>
+<br/>
+
+> **DISCLAIMER**:   *This repository was created for educational purposes to show the development and id progress of the team in
+> creating the app.  This readme does not take into account best
+> practices.*
+
+**CLYF - Serious Game**   is the new app that you will learn to love. You can log in as *CREATOR* and build your own quiz, or as *PLAYER* and play the quiz that someone has created especially for you!
+
+<br/>
 
 ![daily-project-report](https://user-images.githubusercontent.com/78272736/208240863-6c471c38-df5c-438a-a512-fe1b06634999.jpg)
 
 <br/>
 
-**Martedì 6 Dicembre**
-1. Realizzato schema ER
-2. Ipotizzata prima versione UI (prima schermata app, palette colori, stile)
-3. Ipotizzata prima versione struttura progetto
-4. Selezione nel nostro stack di *Firebase* per auth e db 
-5. Creato nuovo progetto in Android Studio
-6. Implementazione *Firebase* su progetto Android Studio
-7. Implementata prima versione di Login e Registrazione con annessa UI (*User Interface non definitiva, propedeutica al testing*)
-8. Testing di Login e Registrazione
-9. Code Refactoring di gruppo
-10. Inserimento di commenti nel codice
-11. Commit e push
+**Tuesday | 6 December 2022**
+ - [x] ER scheme 
+ - [x] Hypothesized UI (first app screen, color palette, style) 
+ - [x] List item
+ - [x] Assumed first version of the project structure
+ - [x] Selection of Firebase stack for auth and db 
+ - [x] Created new project in Android Studio 
+ - [x] Firebase implementation on Android Studio project 
+ - [x] Implemented first version of Login and Registration with attached UI (non-definitive User Interface, preparatory to testing) 
+ - [x] Testing of Login and Registration
+ - [x] Code Refactoring
+ - [x] Commits and push
+ 
+ **Wednesday | December 7 - 2022**
+ - [x] Assumed *Firestore Firebase* as db
+ - [x] Linked Android Studio project to *Firebase Firestore* 
+ - [x] Created UI for Login and Registration phase
+ - [x] Data saving test on *Firestore*
+ - [x] Firestore connection to user save
+ - [x] *Create* - tested
+ - [x] Testing
+ - [x] Commits and push
 
-**Mercoledì 7 Dicembre**
-1. Ipotizzato *Firestore Firebase* come db
-2. Collegato progetto Android Studio a *Firebase Firestore*
-3. Realizzata UI per fase di Accesso e Registrazione
-4. Testing di salvataggio dati su *Firestore* (Test riuscito)
-5. Collegamento Firestore a salvataggio utente in fase di registrazione
-6. Inizio build di interfaccia app per accesso "admin" (predisposizione popup e tasti CRUD)
-7. *Create* testato e funzionante
-8. Testing
-9. Commit e push
+**Thursday | December 8 - 2022**
+ - [x] Connection between various UIs
+ - [x] Testing
+ - [x] Commits and push
 
-**Giovedì 8 Dicembre**
-1. Connessione tra varie UI
-2. Testing
-3. Commit e push
+**Friday | December 9 - 2022**
+ - [x] CRUD implementation (Create)
+ - [x] Design modify CRUD (Update)
+ - [x] Creation of popup for modification (Update)
+ - [x] Commits and push
+ 
+ 
+**Monday | December 12 - 2022**
+ - [x] Implementing modify CRUD (Update)
+ - [x] Implementation delete CRUD (Delete)
+ - [x] Further implementation create - add to add single elements (Create)
+ - [x] Creation of "exit" button to return to app home page
+ - [x] Testing
+ - [x] Commits and push
 
-**Venerdì 9 Dicembre**
-1. Implementazione CRUD (Create)
-2. Ideazione modify CRUD (Update)
-3. Creazione popup per modifica (Update)
+**Tuesday | December 13 - 2022**
+ - [x] UI implementation and preparation for printing questions
+ - [x] Bug fixes
+ - [x] Global app testing
+ - [x] Implementation of the "feature" button for updating print questions
+ - [x] Testing
+ - [x] Commits and push
 
-**Lunedì 12 Dicembre** 
-1. Implementazione modify CRUD (Update)
-2. Implementazione delete CRUD (Delete)
-3. Ulteriore implementazione create - add per aggiungere singoli elementi (Create)
-4. Creazione tasto "esci" per tornare a pagina inziale app
-5. Testing
+**Wednesday | December 14 - 2022**
+ - [x] CREATE tests
+ - [x] READ tests
+ - [x] UPDATE tests
+ - [x] DELETE tests
+ - [x] Crud connection and interface setup
+ - [x] Global App Testing (Complete CRUD Working Confirmation)
+ - [x] Bug fixes
+ - [x] Code Refactoring
+ - [x] Dev talks
+ - [x] Testing
+ - [x] Commits and push
 
-**Martedì 13 Dicembre** 
-1. Implementazione e predisposizione UI per stampa domande 
-2. Bug fix 
-3. Testing su app globale 
-4. Implementazione tasto "feature" per aggiornamento stampa domande 
+**Thursday | December 15 - 2022**
+ - [x] Creation of guest section
+ - [x] Differentiated admin/user access test
+ - [x] Guest UI creation (view/popup)
+ - [x] Setting up the score system for single user
+ - [x] Preparation of global score system for users
+ - [x] View/popup creation for single and global scores
+ - [x] Bug fixes
+ - [x] Coding and testing
+ - [x] Dev talks
+ - [x] Testing
+ - [x] Commits and push
 
-**Mercoledì 14 Dicembre** 
-1. Test CREATE
-2. Test READ
-3. Test UPDATE
-4. Test DELETE
-5. Collegamento crud e predisposizione ad interfaccia realizzata
-6. Testing su app globale (Conferma funzionamento totale CRUD)
-7. Bug fix
-8. Code Refactoring 
-9. Dev talk 
-10. Commit e push 
+**Friday | December 16 - 2022**
+ - [x] Single score section implementation and bug fixes
+ - [x] Global score section implementation and bug fixes
+ - [x] UI/UX upgrades
+ - [x] General functional tests
+ - [x] Devs meeting
+ - [x] Testing
+ - [x] Commits and push
 
-**Giovedì 15 Dicembre**
-1. Creazione sezione guest 
-2. Test accessi differenziati admin/user
-3. Creazione UI guest (view/popup)
-4. Predisposizione sistema di score per utente singolo 
-5. Predisposizione sistema di score globale utenti 
-6. Creazione view/popup per score singoli e globali
-7. Coding e testing 
-8. Riunione devs 
-9. Code refactoring di gruppo 
-10. Test app di gruppo 
-11. Commit e push 
-
-**Venerdì 16 Dicembre**
-1. Implementazione sezione score singola e bug fix 
-2. Implementazione sezione score globale e bug fix 
-3. Upgrading UI/UX 
-4. Test generali di funzionamento 
-5. Riunione devs 
-6. Testing 
-7. Commit e push 
-
-**Sabato 17 Dicembre** 
-1. Test generale di funzionamento app
-2. Upgrading UI mancanti views/popup 
-3. Implementazione feature refresh score globale
-4. Riunione devs 
-5. Test generale di funzionamento app con nuova UI 
-6. Commit e push
+**Saturday | December 17 - 2022**
+ - [x] General app function test
+ - [x] Upgrading UI missing views/popups
+ - [x] Global feature refresh score implementation
+ - [x] Devs meeting
+ - [x] Testing
+ - [x] Commits and push
 
 <br/><br/><br/>
 
@@ -101,17 +114,29 @@
 
 <br/>
 
-- Data la scelta della metodologia RAD, si fa commit solo se non sono presenti errori nel codice e se è tutto debitamente commentato. La revisione del codice è necessaria: in primo luogo, tutti commettono errori e in secondo luogo, tutti possono trovarne. Assicurarsi che non venga distribuito alcun codice che non sia stato letto da almeno una persona oltre al dev che l'ha scritto (*meglio da più dev assieme*).
-- Il commento o ogni blocco di commenti deve essere sempre firmato dalle iniziali del dev come nell'esempio seguente (*s per Simone, f per Filippo, j per Jasmine, g per Giulia*)
- > // Testo del commento - S
+> Given the choice of RAD methodology, commit is done only if there are
+> no errors in the code and if everything is duly commented. Code review
+> is needed: first, everyone makes mistakes and second, everyone can
+> find them. Make sure you don't distribute any code that hasn't been
+> read by at least one person other than the dev who wrote it
+> (preferably by multiple devs together).
+> 
+> The comment or each block of comments must always be signed by the
+> initials of the dev as in the following example (s for Simone, f for
+> Filippo, j for Jasmine, g for Giulia)
 
-- Ogni commit dovrà presentare il nome del dev e descrivere ciò che è stato fatto
+>     // Lorem Ipsum - S
 
-- I nomi delle variabili, delle costanti e delle funzioni saranno scritti in inglese e saranno nomi descrittivi
-- I nomi di variabili, costanti e funzioni saranno scritti in camelCase
-- Commentare ogni variabile e costante sulla stessa riga, descrivendola.
-- Le variabili booleane per i controlli avranno la seguente nomenclatura: checkNomeDelControllo
-- Documentare al meglio il codice al termine di ogni giornata lavorativa 
+ 1. Each commit will have to present the name of the dev and describe
+    what has been done
+
+2. The names of the variables, constants and functions will be written in English and will be descriptive names
+
+3. The names of variables, constants and functions will be written in camelCase
+
+4. Boolean variables for controls will have the following nomenclature: checkNameOfControl
+
+5. Document your code at the end of each workday
 
 
 <br/><br/><br/>
@@ -120,14 +145,28 @@
 
 <br/>
 
-- Sono previste riunioni frequenti per verificare lo stato di avanzamento del codice
-- Qualità e funzionalità sono in primo piano: meglio meno, ma fatto bene. 
-- Chiedere aiuto non è un reato
-- Il codice è del team, il risultato è del team, i problemi sono del team.
-- Scrivi codice che tutti possano leggere, anche dev esterni al gruppo. Se non si capisce, modifica.
+- Frequent meetings are planned to check the progress of the code.
+- Quality and functionality are in the foreground: better less, but done well.
+- Asking for help is not a crime.
+- The code belongs to the team, the result belongs to the team, the problems belong to the team.
+- Write code that everyone can read, even devs outside the group. If you don't understand, edit.
 
 
-<br/><br/><br/>
+<br/>
+
+
+![roadmap](https://user-images.githubusercontent.com/78272736/208477840-2c5d4461-1ad1-40af-ae62-267a053d95d2.jpg)
+
+The way the app was designed and built, it allows for a wide range of upgrades and features. This is the list of what we thought:
+
+ - [ ] Sharing quiz via link 
+ - [ ] Multilingual App - Allow access to the app by selecting the language
+ - [ ] Create a premium (paid) profile for the quiz creator that can add additional features
+ - [ ] Quiz with timer (time limit for answers)
+ - [ ] Ability to participate in public quizzes (created by unknown users but registered to the app)
+ - [ ]   App customization through themes to choose from on the homescreen
+ - [ ] Instant refresh when adding questions and editing them
+
 
 ![credits](https://user-images.githubusercontent.com/78272736/208241311-75116c79-9ba5-4049-ac95-d7b849116189.jpg)
 

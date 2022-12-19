@@ -150,21 +150,26 @@ class ViewAdminActivity : AppCompatActivity() {
                             save1.setOnClickListener {
                                 //check if the fields are not empty - G.
                                 if (!TextUtils.isEmpty(question.text) && !TextUtils.isEmpty(answer1.text) && !TextUtils.isEmpty(answer2.text) && !TextUtils.isEmpty(answer3.text) && !TextUtils.isEmpty(correctAnswer.text)){
-                                    //check if the correct answer is equal to one of the answers - G.
-                                    if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
+                                    //check if two answers are identical - G.
+                                    if ((answer1.text.toString() != answer2.text.toString()) && ((answer2.text.toString() != answer3.text.toString()) && (answer3.text.toString() != answer1.text.toString()))){
+                                        //check if the correct answer is equal to one of the answers - G.
+                                        if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
 
-                                        //map creation and assignment of values entered by the user - G.
-                                        quiz = hashMapOf()
-                                        quiz["Question"] = question.text.toString()
-                                        quiz["Answer1"] = answer1.text.toString()
-                                        quiz["Answer2"] = answer2.text.toString()
-                                        quiz["Answer3"] = answer3.text.toString()
-                                        quiz["Correct_answer"] = correctAnswer.text.toString()
+                                            //map creation and assignment of values entered by the user - G.
+                                            quiz = hashMapOf()
+                                            quiz["Question"] = question.text.toString()
+                                            quiz["Answer1"] = answer1.text.toString()
+                                            quiz["Answer2"] = answer2.text.toString()
+                                            quiz["Answer3"] = answer3.text.toString()
+                                            quiz["Correct_answer"] = correctAnswer.text.toString()
 
-                                        container.add(quiz)   //adding quizzes to container - G.
-                                        dialogQuestions.dismiss()   //pop-up close - G.
+                                            container.add(quiz)   //adding quizzes to container - G.
+                                            dialogQuestions.dismiss()   //pop-up close - G.
+                                        }else{
+                                            Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - G.
+                                        }
                                     }else{
-                                        Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - G.
+                                        Toast.makeText(this, "You cannot enter two identical answers", Toast.LENGTH_LONG).show()
                                     }
                                 }else{
                                     Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_LONG).show()    //error message - G.
@@ -220,71 +225,76 @@ class ViewAdminActivity : AppCompatActivity() {
             save.setOnClickListener {
                 //check if the fields are not empty - F.
                 if (!TextUtils.isEmpty(question.text) && !TextUtils.isEmpty(answer1.text) && !TextUtils.isEmpty(answer2.text) && !TextUtils.isEmpty(answer3.text) && !TextUtils.isEmpty(correctAnswer.text)){
-                    //check if the correct answer is equal to one of the answers - F.
-                    if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
+                    //check if two answers are identical - G.
+                    if ((answer1.text.toString() != answer2.text.toString()) && ((answer2.text.toString() != answer3.text.toString()) && (answer3.text.toString() != answer1.text.toString()))){
+                        //check if the correct answer is equal to one of the answers - F.
+                        if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
 
-                        db.collection(supportID).whereNotEqualTo("Quiz_name", null).get()
-                            .addOnSuccessListener { result ->
-                                var controlSupport = false
-                                for (document in result){
-                                    controlSupport = true
-                                }
-                                if (controlSupport){
-                                    //map creation and assignment of values entered by the user - F.
-                                    quiz = hashMapOf()
-                                    quiz["Question"] = question.text.toString()
-                                    quiz["Answer1"] = answer1.text.toString()
-                                    quiz["Answer2"] = answer2.text.toString()
-                                    quiz["Answer3"] = answer3.text.toString()
-                                    quiz["Correct_answer"] = correctAnswer.text.toString()
+                            db.collection(supportID).whereNotEqualTo("Quiz_name", null).get()
+                                .addOnSuccessListener { result ->
+                                    var controlSupport = false
+                                    for (document in result){
+                                        controlSupport = true
+                                    }
+                                    if (controlSupport){
+                                        //map creation and assignment of values entered by the user - F.
+                                        quiz = hashMapOf()
+                                        quiz["Question"] = question.text.toString()
+                                        quiz["Answer1"] = answer1.text.toString()
+                                        quiz["Answer2"] = answer2.text.toString()
+                                        quiz["Answer3"] = answer3.text.toString()
+                                        quiz["Correct_answer"] = correctAnswer.text.toString()
 
-                                    db.collection(supportID).document().set(quiz)   //entering data into the database - F.
-                                        .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
-                                        .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
+                                        db.collection(supportID).document().set(quiz)   //entering data into the database - F.
+                                            .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
+                                            .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
 
-                                    dialogAdd.dismiss() //pop-up close - F.
-                                }else{
+                                        dialogAdd.dismiss() //pop-up close - F.
+                                    }else{
 
-                                    //map creation and assignment of values entered by the user - F.
-                                    quiz = hashMapOf()
-                                    quiz["Question"] = question.text.toString()
-                                    quiz["Answer1"] = answer1.text.toString()
-                                    quiz["Answer2"] = answer2.text.toString()
-                                    quiz["Answer3"] = answer3.text.toString()
-                                    quiz["Correct_answer"] = correctAnswer.text.toString()
+                                        //map creation and assignment of values entered by the user - F.
+                                        quiz = hashMapOf()
+                                        quiz["Question"] = question.text.toString()
+                                        quiz["Answer1"] = answer1.text.toString()
+                                        quiz["Answer2"] = answer2.text.toString()
+                                        quiz["Answer3"] = answer3.text.toString()
+                                        quiz["Correct_answer"] = correctAnswer.text.toString()
 
-                                    //popup creation - F.
-                                    var dialogBuilderAddName : AlertDialog.Builder
-                                    var dialogAddName : AlertDialog?
-                                    var viewAddName = LayoutInflater.from(this).inflate(R.layout.popup_quizname, null, false)
-                                    dialogBuilderAddName = AlertDialog.Builder(this).setView(viewAddName)
-                                    dialogAddName = dialogBuilderAddName!!.create()
-                                    dialogAddName.show()
+                                        //popup creation - F.
+                                        var dialogBuilderAddName : AlertDialog.Builder
+                                        var dialogAddName : AlertDialog?
+                                        var viewAddName = LayoutInflater.from(this).inflate(R.layout.popup_quizname, null, false)
+                                        dialogBuilderAddName = AlertDialog.Builder(this).setView(viewAddName)
+                                        dialogAddName = dialogBuilderAddName!!.create()
+                                        dialogAddName.show()
 
-                                    var quizNameAdder : MutableMap<String, Any>
-                                    var saveAddQuizName = viewAddName.saveAddQuizName
+                                        var quizNameAdder : MutableMap<String, Any>
+                                        var saveAddQuizName = viewAddName.saveAddQuizName
 
-                                    saveAddQuizName.setOnClickListener {
-                                        var quizNameET = viewAddName.addQuizName.text.toString()
-                                        if (!TextUtils.isEmpty(quizNameET)){
-                                            db.collection(supportID).document().set(quiz)   //entering data into the database - F.
-                                            quizNameAdder = hashMapOf()
-                                            quizNameAdder["Quiz_name"] = quizNameET
-                                            db.collection(supportID).document().set(quizNameAdder)
+                                        saveAddQuizName.setOnClickListener {
+                                            var quizNameET = viewAddName.addQuizName.text.toString()
+                                            if (!TextUtils.isEmpty(quizNameET)){
+                                                db.collection(supportID).document().set(quiz)   //entering data into the database - F.
+                                                quizNameAdder = hashMapOf()
+                                                quizNameAdder["Quiz_name"] = quizNameET
+                                                db.collection(supportID).document().set(quizNameAdder)
 
-                                            dialogAddName.dismiss() //pop-up close - F.
-                                            dialogAdd.dismiss() //pop-up close - F.
-                                        }else{
-                                            Toast.makeText(this, "quizName field is empty", Toast.LENGTH_LONG).show()
+                                                dialogAddName.dismiss() //pop-up close - F.
+                                                dialogAdd.dismiss() //pop-up close - F.
+                                            }else{
+                                                Toast.makeText(this, "quizName field is empty", Toast.LENGTH_LONG).show()
+                                            }
                                         }
+
                                     }
 
                                 }
 
-                            }
-
+                        }else{
+                            Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - F.
+                        }
                     }else{
-                        Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - F.
+                        Toast.makeText(this, "You cannot enter two identical answers", Toast.LENGTH_LONG).show()
                     }
                 }else{
                     Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_LONG).show()    //error message - F.
@@ -373,32 +383,38 @@ class ViewAdminActivity : AppCompatActivity() {
                                 save.setOnClickListener {
                                     //check if the fields are not empty - G.
                                     if (!TextUtils.isEmpty(question.text) && !TextUtils.isEmpty(answer1.text) && !TextUtils.isEmpty(answer2.text) && !TextUtils.isEmpty(answer3.text) && !TextUtils.isEmpty(correctAnswer.text)){
-                                        //check if the correct answer is equal to one of the answers - G.
-                                        if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
+                                        //check if two answers are identical - G.
+                                        if ((answer1.text.toString() != answer2.text.toString()) && ((answer2.text.toString() != answer3.text.toString()) && (answer3.text.toString() != answer1.text.toString()))){
+                                            //check if the correct answer is equal to one of the answers - G.
+                                            if ((correctAnswer.text.toString() == answer1.text.toString()) || ((correctAnswer.text.toString() == answer2.text.toString()) || (correctAnswer.text.toString() == answer3.text.toString()))){
 
-                                            //map creation and assignment of values entered by the user - G.
-                                            quiz = hashMapOf()
-                                            quiz["Question"] = question.text.toString()
-                                            quiz["Answer1"] = answer1.text.toString()
-                                            quiz["Answer2"] = answer2.text.toString()
-                                            quiz["Answer3"] = answer3.text.toString()
-                                            quiz["Correct_answer"] = correctAnswer.text.toString()
+                                                //map creation and assignment of values entered by the user - G.
+                                                quiz = hashMapOf()
+                                                quiz["Question"] = question.text.toString()
+                                                quiz["Answer1"] = answer1.text.toString()
+                                                quiz["Answer2"] = answer2.text.toString()
+                                                quiz["Answer3"] = answer3.text.toString()
+                                                quiz["Correct_answer"] = correctAnswer.text.toString()
 
-                                            //query the database and take all the documents with the component question equals to questionToUpdate - G.
-                                            db.collection(supportID)
-                                                .whereEqualTo("Question", questionToUpdate)
-                                                .get()
-                                                .addOnSuccessListener { documents ->
-                                                    for (document in documents) {
-                                                        var id = document.id    //we take the document ID and put it into a support variable - G.
-                                                        db.collection(supportID).document(id).update(quiz)  //update - G.
+                                                //query the database and take all the documents with the component question equals to questionToUpdate - G.
+                                                db.collection(supportID)
+                                                    .whereEqualTo("Question", questionToUpdate)
+                                                    .get()
+                                                    .addOnSuccessListener { documents ->
+                                                        for (document in documents) {
+                                                            var id = document.id    //we take the document ID and put it into a support variable - G.
+                                                            db.collection(supportID).document(id).update(quiz)  //update - G.
+                                                        }
                                                     }
-                                                }
 
-                                            dialogQuestion.dismiss()    //pop-up close - G.
-                                            dialogModify.dismiss()  //pop-up close - G.
-                                        }else{
-                                            Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - G.
+                                                dialogQuestion.dismiss()    //pop-up close - G.
+                                                dialogModify.dismiss()  //pop-up close - G.
+                                            }else{
+                                                Toast.makeText(this, "The correct answer must be equal to one of the answers", Toast.LENGTH_LONG).show()    //error message - G.
+                                            }
+                                        }
+                                        else{
+                                            Toast.makeText(this, "You cannot enter two identical answers", Toast.LENGTH_LONG).show()
                                         }
                                     }else{
                                         Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_LONG).show()    //error message - G.
