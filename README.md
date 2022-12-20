@@ -8,11 +8,28 @@
 
 **CLYF - Serious Game**   is the new app that you will learn to love. You can log in as *CREATOR* and build your own quiz, or as *PLAYER* and play the quiz that someone has created especially for you!
 
-<br/>
+**PROJECT STRUCTURE**
+<br/><br/>
+![project-structure](https://user-images.githubusercontent.com/78272736/208632115-aa543aaf-01cb-4bdd-978d-54bb8588c42e.png)
+<br/><br/>
 
-![daily-project-report](https://user-images.githubusercontent.com/78272736/208240863-6c471c38-df5c-438a-a512-fe1b06634999.jpg)
+![roadmap](https://user-images.githubusercontent.com/78272736/208477840-2c5d4461-1ad1-40af-ae62-267a053d95d2.jpg)
 
-<br/>
+The way the app was designed and built, it allows for a wide range of upgrades and features. This is the list of what we thought:
+
+ - [ ] Sharing quiz via link 
+ - [ ] Many languages - Allow access to the app by selecting the language
+ - [ ] Create a premium (paid) profile for the quiz creator for additional features
+ - [ ] Timer on quiz
+ - [ ] Ability to participate @ public quizzes (created by unknown users)
+ - [ ] App customization through themes
+ - [ ] Instant refresh when adding questions and editing them
+ 
+ <br/>
+ 
+ ![daily-project-report](https://user-images.githubusercontent.com/78272736/208240863-6c471c38-df5c-438a-a512-fe1b06634999.jpg)
+ 
+ <br/>
 
 **Tuesday | 6 December 2022**
  - [x] ER scheme 
@@ -153,19 +170,6 @@
 
 
 <br/>
-
-
-![roadmap](https://user-images.githubusercontent.com/78272736/208477840-2c5d4461-1ad1-40af-ae62-267a053d95d2.jpg)
-
-The way the app was designed and built, it allows for a wide range of upgrades and features. This is the list of what we thought:
-
- - [ ] Sharing quiz via link 
- - [ ] Multilingual App - Allow access to the app by selecting the language
- - [ ] Create a premium (paid) profile for the quiz creator that can add additional features
- - [ ] Quiz with timer (time limit for answers)
- - [ ] Ability to participate in public quizzes (created by unknown users but registered to the app)
- - [ ]   App customization through themes to choose from on the homescreen
- - [ ] Instant refresh when adding questions and editing them
 
 
 ![credits](https://user-images.githubusercontent.com/78272736/208241311-75116c79-9ba5-4049-ac95-d7b849116189.jpg)
