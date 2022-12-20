@@ -9,27 +9,12 @@
 **CLYF - Serious Game**   is the new app that you will learn to love. You can log in as *CREATOR* and build your own quiz, or as *PLAYER* and play the quiz that someone has created especially for you!
 
 **PROJECT STRUCTURE**
+
 <br/><br/>
+
 ![project-structure](https://user-images.githubusercontent.com/78272736/208632115-aa543aaf-01cb-4bdd-978d-54bb8588c42e.png)
+
 <br/><br/>
-
-![roadmap](https://user-images.githubusercontent.com/78272736/208477840-2c5d4461-1ad1-40af-ae62-267a053d95d2.jpg)
-
-The way the app was designed and built, it allows for a wide range of upgrades and features. This is the list of what we thought:
-
- - [ ] Sharing quiz via link 
- - [ ] Many languages - Allow access to the app by selecting the language
- - [ ] Create a premium (paid) profile for the quiz creator for additional features
- - [ ] Timer on quiz
- - [ ] Ability to participate @ public quizzes (created by unknown users)
- - [ ] App customization through themes
- - [ ] Instant refresh when adding questions and editing them
- 
- <br/>
- 
- ![daily-project-report](https://user-images.githubusercontent.com/78272736/208240863-6c471c38-df5c-438a-a512-fe1b06634999.jpg)
- 
- <br/>
 
 **Tuesday | 6 December 2022**
  - [x] ER scheme 
@@ -125,7 +110,27 @@ The way the app was designed and built, it allows for a wide range of upgrades a
  - [x] Testing
  - [x] Commits and push
 
+<br/>
+
+![app-screenshots](https://user-images.githubusercontent.com/78272736/208636846-6386ed29-9399-4b71-a371-3ee1a5759c02.png)
+
+ <br/>
+
 <br/><br/><br/>
+
+![roadmap](https://user-images.githubusercontent.com/78272736/208477840-2c5d4461-1ad1-40af-ae62-267a053d95d2.jpg)
+
+The way the app was designed and built, it allows for a wide range of upgrades and features. This is the list of what we thought:
+
+ - [ ] Sharing quiz via link 
+ - [ ] Many languages - Allow access to the app by selecting the language
+ - [ ] Create a premium (paid) profile for the quiz creator for additional features
+ - [ ] Timer on quiz
+ - [ ] Ability to participate @ public quizzes (created by unknown users)
+ - [ ] App customization through themes
+ - [ ] Instant refresh when adding questions and editing them
+ 
+ <br/>
 
 ![code-rules](https://user-images.githubusercontent.com/78272736/208240996-5096bf09-8e85-45b1-82c0-960d57e1dc22.jpg)
 
@@ -167,7 +172,6 @@ The way the app was designed and built, it allows for a wide range of upgrades a
 - Asking for help is not a crime.
 - The code belongs to the team, the result belongs to the team, the problems belong to the team.
 - Write code that everyone can read, even devs outside the group. If you don't understand, edit.
-
 
 <br/>
 
